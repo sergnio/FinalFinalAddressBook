@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<web-app xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+         xsi:schemaLocation="http://java.sun.com/xml/ns/javaee 
+              http://java.sun.com/xml/ns/javaee/web-app_2_5.xsd"
+         version="2.5"
+         xmlns="http://java.sun.com/xml/ns/javaee">
+
+  <!-- Servlets -->
+  <servlet>
+    <servlet-name>GetEntryDataServiceImpl</servlet-name>
+    <servlet-class>edu.gac.MCS270.AddressBook.server.GetEntryDataServiceImpl</servlet-class>
+  </servlet>
+  
+  <servlet-mapping>
+    <servlet-name>GetEntryDataServiceImpl</servlet-name>
+    <url-pattern>/addressbook/getentry</url-pattern>
+  </servlet-mapping>
+  
+  
+<servlet>
+    <servlet-name>SubmitEntryDataServiceImpl</servlet-name>
+    <servlet-class>edu.gac.MCS270.AddressBook.server.SubmitEntryDataServiceImpl</servlet-class>
+  </servlet>
+  
+  <servlet-mapping>
+    <servlet-name>SubmitEntryDataServiceImpl</servlet-name>
+    <url-pattern>/addressbook/submitentry</url-pattern>
+  </servlet-mapping>
+  
+  <!-- Default page to serve -->
+  <welcome-file-list>
+    <welcome-file>AddressBook.html</welcome-file>
+  </welcome-file-list>
+
+</web-app>
+
+

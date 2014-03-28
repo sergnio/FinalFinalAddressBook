@@ -1,0 +1,2 @@
+serviceClass: edu.gac.MCS270.AddressBook.client.SubmitEntryDataService
+path: 7E63155B2B35D3FF649B28B38DF291E4.gwt.rpc
