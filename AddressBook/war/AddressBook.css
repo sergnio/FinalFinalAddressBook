@@ -15,6 +15,24 @@ h1 {
   font-size: 16pt;
 }
 
+.leftColumn {
+	float: left;
+	width: 200px;
+	top: 79px;
+	margin-bottom: 300px;
+}
+.rightcolumn {
+	margin-left: 100px;
+	position: absolute;
+}
+.footer {
+	width: 100%;
+	font-size: x-small;
+	text-align: center;
+	clear: right;
+	position: relative;
+	top: 350px;
+}
 /** Most GWT widgets already have a style name defined */
 .gwt-DialogBox {
   width: 400px;
@@ -31,4 +49,10 @@ h1 {
 /** Set ids using widget.getElement().setId("idOfElement") */
 #closeButton {
   margin: 15px 6px 6px;
+}
+.footer {
+        font-size: x-small;
+        text-align: center;
+        clear: right;
+        padding-bottom: 20px;
 }

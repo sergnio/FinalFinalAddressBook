@@ -76,7 +76,6 @@ public class AddressBookModel {
 			
 		   	List<EntryData> entries = getEntryData();
 		   	List<EntryData> sorted = new ArrayList();
-		   	System.out.println("getLNsortedSearchData");
 			for (EntryData entry : entries){
 		   		sorted.add(entry);
 		   	}
@@ -86,7 +85,6 @@ public class AddressBookModel {
 
 		public static List<EntryData> getZipSortedSearchData() {
 			List<EntryData> entries = getEntryData();
-		   	System.out.println("getZIPsortedSearchData");
 			Collections.sort(entries, EntryData.COMPARE_BY_ZIP); 
 			    return entries;
 		}

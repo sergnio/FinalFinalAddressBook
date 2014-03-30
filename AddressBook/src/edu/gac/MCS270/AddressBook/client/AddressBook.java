@@ -24,12 +24,12 @@ public class AddressBook implements EntryPoint {
 	public void printMailingListFromServer() {
 		entryDataService.getEntryDataFromServer(new AsyncCallback<List<EntryData>>() {
 			public void onFailure(Throwable caught) {
-				System.out.print("fail on view contacts from server!");
+
 				return;
 			}
 			
 			public void onSuccess(List<EntryData> result) {
-				System.out.print("Succes!!!!!!");
+			
 				abView.viewMailingList(result);
 			}
 		});
@@ -113,12 +113,12 @@ public class AddressBook implements EntryPoint {
 		public void viewContactsFromServer() {
 			entryDataService.getEntryDataFromServer(new AsyncCallback<List<EntryData>>() {
 				public void onFailure(Throwable caught) {
-					System.out.print("fail on view contacts from server!");
+
 					return;
 				}
 				
 				public void onSuccess(List<EntryData> result) {
-					System.out.print("Succes!!!!!!");
+
 					abView.viewAddressBookEntries(result);
 				}
 			});

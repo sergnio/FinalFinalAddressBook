@@ -12,7 +12,6 @@ import com.google.gwt.user.client.ui.HorizontalPanel;
 import com.google.gwt.user.client.ui.Label;
 import com.google.gwt.user.client.ui.PopupPanel;
 import com.google.gwt.user.client.ui.RootPanel;
-import com.google.gwt.user.client.ui.TextArea;
 import com.google.gwt.user.client.ui.TextBox;
 import com.google.gwt.user.client.ui.VerticalPanel;
 
@@ -47,16 +46,19 @@ public class AddressBookView {
 		titlePanel.setStyleName("titlePanel");
 		
 		VerticalPanel menuBar = makeMenuBar();
-		menuBar.setStyleName("menuBar");
+		menuBar.setStyleName("leftColumn");
 		
 		FlowPanel mainPanel = new FlowPanel();
-		mainPanel.setStyleName("workingSpacePanel");
-		// need plz
-		//HorizontalPanel footerPanel = new HorizontalPanel();
+		mainPanel.setStyleName("rightColumn");
 		
 		rootPanel.add(titlePanel);
 		rootPanel.add(menuBar);
 		rootPanel.add(mainPanel);
+		
+		Label footer = new Label("Copyright © 2014 by Diana Mueller, Molly Schroeder, Sergio Najera. Last Updated on 03/28/14");
+		footer.addStyleName("footer");
+		footer.setHorizontalAlignment(HasHorizontalAlignment.ALIGN_CENTER);
+		rootPanel.add(footer);
 
 		return mainPanel;				
 		
@@ -253,7 +255,7 @@ public class AddressBookView {
 		// MAKES MENU BAR EVERY SINGLE TIME
 	public VerticalPanel makeMenuBar() {
 		VerticalPanel leftColumn = new VerticalPanel();
-		// NEED TO STYLE vertical panel (for size)
+		leftColumn.setStyleName("leftColumn");
 		
 		Button homeButton = new Button("Home");
 		homeButton.setText("Home");
@@ -341,7 +343,6 @@ public class AddressBookView {
 			}
 			
 		});
-		
 		
 		Button printMailingListButton = new Button("Print mailing list");
 		printMailingListButton.setText("Print mailing list");
@@ -463,7 +464,7 @@ public class AddressBookView {
 		workingSpace.add(phoneLabelPanel);
 		
 		HorizontalPanel blankLabelPanel = new HorizontalPanel();
-		Label blankLabel = new Label("-----------");
+		Label blankLabel = new Label("- - - - - - - -");
 		blankLabelPanel.add(blankLabel);
 		workingSpace.add(blankLabelPanel);		
 		
