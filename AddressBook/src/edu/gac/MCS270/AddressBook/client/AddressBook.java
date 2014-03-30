@@ -21,6 +21,7 @@ public class AddressBook implements EntryPoint {
 		abView.viewMainPage();
 	}
 	
+	// controller method for retrieving data from server to display print mailing list
 	public void printMailingListFromServer() {
 		entryDataService.getEntryDataFromServer(new AsyncCallback<List<EntryData>>() {
 			public void onFailure(Throwable caught) {
@@ -52,6 +53,8 @@ public class AddressBook implements EntryPoint {
 	                });
 		}
 	
+		
+		// controller method for retrieving data from server that are already sorted by last name
 	public void getSortedEntriesByLastNameFromServer() {
 		
 		entryDataService.getLNSortedEntryDataFromServer(
@@ -67,6 +70,8 @@ public class AddressBook implements EntryPoint {
                 });
 	}
 
+	
+	// controller method for retrieving data from server that are already sorted by zip
 	public void getSortedEntriesByZipFromServer() {
 		entryDataService.getZipSortedEntryDataFromServer(
                 new AsyncCallback<List<EntryData>>() {
@@ -81,7 +86,7 @@ public class AddressBook implements EntryPoint {
                 });
 	}
 	
-	//adds contact to address book
+	// controller method for sending data to database
 	public void addAddressHandler(EntryData entries){
 	new AsyncCallback<List<EntryData>>(){
 			public void onFailure(Throwable caught){
@@ -109,7 +114,7 @@ public class AddressBook implements EntryPoint {
 			}
 		});
 	}
-		
+		// controller method for retrieving data from server with all the contacts/entries
 		public void viewContactsFromServer() {
 			entryDataService.getEntryDataFromServer(new AsyncCallback<List<EntryData>>() {
 				public void onFailure(Throwable caught) {
@@ -124,6 +129,8 @@ public class AddressBook implements EntryPoint {
 			});
 		}
 
+		
+		// controller method for deleting an entry from the database
 		public void handleDeleteEntryFromServer(EntryData entry) {
 			submitEntryDataService.deleteEntryDataFromServer(entry,
 					new AsyncCallback<String>() {

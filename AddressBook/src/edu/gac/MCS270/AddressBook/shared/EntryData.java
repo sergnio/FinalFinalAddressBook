@@ -110,7 +110,7 @@ public class EntryData implements Serializable {
 				"\n Address: " + address +
 				"\n          " + city+", " + state + " " + zip +
 				"\n E-mail: " + email +
-				"\n Phone: " + phone;
+				"\n Phone:  " + phone;
 	}
 
 

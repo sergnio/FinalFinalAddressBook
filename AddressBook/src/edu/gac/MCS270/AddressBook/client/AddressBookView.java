@@ -19,6 +19,7 @@ import edu.gac.MCS270.AddressBook.shared.EntryData;
 
 public class AddressBookView {
 	
+	// sets controller
 	private AddressBook controller;
 	final PopupPanel mailingInfoPopup = new PopupPanel();	
 	
@@ -32,16 +33,18 @@ public class AddressBookView {
 		this.controller = controller;
 	}
 	
+	// displays the main page with the buttons on the left side
 	public void viewMainPage(){
 		RootPanel rootPanel = RootPanel.get();
 		rootPanel.clear();
 		rootPanel.add(mainPage());
 	}
+	
+	// used for displaying the buttons every single time any button is pressed
 	public FlowPanel mainPage() {
 		RootPanel rootPanel = RootPanel.get();
 		rootPanel.clear();
 		
-		// need moar style over all the panels
 		HorizontalPanel titlePanel = new HorizontalPanel();
 		titlePanel.setStyleName("titlePanel");
 		
@@ -64,7 +67,7 @@ public class AddressBookView {
 		
 	}
 	
-	
+	// views all the entries once the button is pressed
 	public void viewAddressBookEntries(List<EntryData> entries) {
 		FlowPanel workingSpace = mainPage();
 		if (entries != null) {
@@ -75,11 +78,10 @@ public class AddressBookView {
 		}
 		
 	}
-	
+	// views the address form to create a new entry
 	public void viewCreateAdressBookEntryForm() {
 		FlowPanel workingSpace = mainPage();
 		
-		//might need to change to horizontal panel
 		final FlowPanel addAddressPanel = new FlowPanel();
 		VerticalPanel addressPanel = new VerticalPanel();
 		addressPanel.addStyleName("AddContactPanel");
@@ -91,12 +93,13 @@ public class AddressBookView {
 		firstNameLabelPanel.add(firstNameLabel);
 		workingSpace.add(firstNameLabelPanel);
 		
+		// creates the blank text box which is under the text
 		HorizontalPanel firstNameTextBoxPanel = new HorizontalPanel();
 		final TextBox firstNameTextBox = new TextBox();
 		firstNameTextBoxPanel.add(firstNameTextBox);
 		workingSpace.add(firstNameTextBoxPanel);
 		
-		// Last name textbox
+		// rinse and repeat, creating text and the text box under it
 		HorizontalPanel lastNameLabelPanel = new HorizontalPanel();
 		Label lastNameLabel = new Label("Last Name");
 		lastNameLabelPanel.add(lastNameLabel);
@@ -147,7 +150,6 @@ public class AddressBookView {
 		zipTextBoxPanel.add(zipTextBox);
 		workingSpace.add(zipTextBoxPanel);
 		
-		//email textbox
 		HorizontalPanel emailLabelPanel = new HorizontalPanel();
 		Label emailLabel = new Label("Email");
 		emailLabelPanel.add(emailLabel);
@@ -167,6 +169,7 @@ public class AddressBookView {
 		final TextBox phoneTextBox = new TextBox();
 		phoneTextBoxPanel.add(phoneTextBox);
 		workingSpace.add(phoneTextBoxPanel);
+		
 		
 		firstNameTextBox.setName("First Name");
 		lastNameTextBox.setName("Last Name");
@@ -195,6 +198,7 @@ public class AddressBookView {
 		workingSpace.add(submitButton);
 	}
 	
+	// views a single entry once the button is pressed
 	public void viewSingleAddressBookEntry(final EntryData entry) {
 		FlowPanel workingSpace = mainPage();
 		
@@ -252,7 +256,7 @@ public class AddressBookView {
 		});
 	}
 	
-		// MAKES MENU BAR EVERY SINGLE TIME
+	// method for making the menu bar to be displayed every time any button is pressed
 	public VerticalPanel makeMenuBar() {
 		VerticalPanel leftColumn = new VerticalPanel();
 		leftColumn.setStyleName("leftColumn");
@@ -276,7 +280,6 @@ public class AddressBookView {
 			}
 		});
 		
-		// make moar
 		Button sortByLastNameButton = new Button("Sort by last name");
 		sortByLastNameButton.setText("Sort by last name");
 		sortByLastNameButton.addClickHandler(new ClickHandler() {
@@ -420,6 +423,7 @@ public class AddressBookView {
 		
 	}
 	
+	// method for creating the mailing label, to be displayed once a button is pressed
 	public VerticalPanel createMailingLabel(EntryData entry) {
 		VerticalPanel workingSpace = new VerticalPanel();
 		
@@ -467,6 +471,7 @@ public class AddressBookView {
 		Label blankLabel = new Label("- - - - - - - -");
 		blankLabelPanel.add(blankLabel);
 		workingSpace.add(blankLabelPanel);		
+		
 		
 		return workingSpace;
 	}

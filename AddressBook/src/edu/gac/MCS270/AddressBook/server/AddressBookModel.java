@@ -14,6 +14,7 @@ import edu.gac.MCS270.AddressBook.shared.EntryData;
 public class AddressBookModel {
 	static final PersistenceManagerFactory pmf = PMF.get();
 
+	// gets the list of entries from the database and combines them into one huge string
 	public String getMailing() {
 		List<EntryData> entries = getEntryData();
 		String mailing = "";
@@ -65,6 +66,7 @@ public class AddressBookModel {
 	        	return new ArrayList<EntryData>(searching);
 	        }
 
+		// gets all entry data from the database
 		public static List<EntryData> getEntryData() {
 			PersistenceManager pm = pmf.getPersistenceManager();
 	        Query query = pm.newQuery(EntryData.class);
@@ -72,6 +74,7 @@ public class AddressBookModel {
 	        return new ArrayList<EntryData>(entries);
 		}
 
+		// gets all entry data from the database and sorts them by last name
 		public static List<EntryData> getLNSortedSearchData() {
 			
 		   	List<EntryData> entries = getEntryData();
@@ -83,12 +86,14 @@ public class AddressBookModel {
 			return entries;
 		}
 
+		// gets all entry data from the database them by zip code
 		public static List<EntryData> getZipSortedSearchData() {
 			List<EntryData> entries = getEntryData();
 			Collections.sort(entries, EntryData.COMPARE_BY_ZIP); 
 			    return entries;
 		}
 
+		// deletes the persistence of an entry
 		public static void deleteEntry(EntryData entry) {
 			PersistenceManager pm = pmf.getPersistenceManager();
 			try {
